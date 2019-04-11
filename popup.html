@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CC视频录制工具</title>
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/new-style.css">
+    <link rel="stylesheet" href="css/fix-style.css">
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: auto;
+        }
+
+        body {
+            width: 280px;
+        }
+
+        body.active-popup {
+            width: 500px;
+        }
+
+        body.resize {
+            width: auto;
+            min-width: 280px;
+        }
+
+        body.active-popup .nsc-popup {
+            display: block !important;
+        }
+
+        .nsc-popup {
+            width: auto;
+            position: relative;
+            left: 0;
+            top: 0;
+            transform: translate(0, 0);
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/content-core.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/download.js"></script>
+</head>
+<body>
+<div class="nsc-capture-options" id="capture_options">
+    <div class="nsc-capture-buttons">
+        <button class="button large block primary" type="button" name="record-start" id="record-start" data-close-window="true">
+            <span class="button-layout" flex="" layout="row" layout-align="center center">
+                <span data-i18n="popupBtnStartRecord">开始录制</span>
+            </span>
+        </button>
+    </div>
+</div>
+
+<div class="nsc-capture-options nsc-capture-options-recording" id="record_status" style="display: none">
+    <div class="nsc-capture-title" data-i18n="popupRecordTitle">视频正在录制中...</div>
+    <div class="nsc-capture-timer" id="record_time">00:02</div>
+    <div class="nsc-capture-video-buttons" flex="" layout="row" layout-wrap="">
+        <button class="nsc-button" type="button" name="record-stop" id="record-stop" data-close-window="true">
+            <span class="nsc-button-layout" flex="" layout="row" layout-align="center center" data-i18n="popupBtnStopRecord">停止录制</span>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

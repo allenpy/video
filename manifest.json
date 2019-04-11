@@ -1,0 +1,63 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [ {
+      "js": [ "js/contentscript.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+   "browser_action": {
+      "default_icon": "images/icons/128x128.png",
+      "default_popup": "popup.html",
+      "default_title": "CC视频录制工具"
+   },
+   "commands": {
+      "_execute_browser_action":{
+         "suggested_key": {
+            "default": "Ctrl+Shift+7",
+            "mac": "Command+Shift+7"
+         }
+      },
+      "start_tab_video": {
+         "description": "Start record tab/page",
+         "suggested_key": {
+            "default": "Ctrl+Shift+8",
+            "mac": "Command+Shift+8"
+         }
+      },
+      "stop_video": {
+         "description": "Stop video recording",
+         "suggested_key": {
+            "default": "Ctrl+Shift+9",
+            "mac": "Command+Shift+9"
+         }
+      }
+   },
+   "description": "录制工具",
+   "externally_connectable": {
+      "matches": ["*://*.mypyhome.com/*"]
+   },
+   "homepage_url": "https://www.bokecc.com/",
+   "icons": {
+      "128": "images/icons/128x128.png"
+   },
+   "incognito": "spanning",
+   "manifest_version": 2,
+   "minimum_chrome_version": "43",
+   "name": "CC视频录制工具",
+   "omnibox": { "keyword" : "aaron" },
+   "offline_enabled": true,
+   "options_page": "options.html",
+   "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+   "permissions": [ "*://*/*", "cookies", "\u003Call_urls>", "downloads", "clipboardWrite", "clipboardRead", "tabs", "activeTab", "storage", "unlimitedStorage", "contextMenus", "identity", "desktopCapture", "tabCapture","contextMenus","pageCapture","notifications" ],
+   "short_name": "CC video",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0.0",
+   "web_accessible_resources": [ "logo.png", "print.html", "video.html", "media_access/*", "fonts/*", "images/*", "css/*", "template/*" ]
+
+}
